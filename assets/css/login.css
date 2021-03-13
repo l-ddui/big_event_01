@@ -1,0 +1,60 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url(/assets/images/login_bg.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+/* 顶部 logo  */
+.header {
+    width: 1200px;
+    margin-top: 20px;
+}
+
+/* 注册和登录区域 */
+.loginAndRegBox {
+    width: 400px;
+    height: 310px;
+    position: fixed;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 1 标题 */
+.titleBox {
+    width: 100%;
+    height: 60px;
+    background: url(/assets/images/login_title.png) no-repeat center;
+}
+
+/* 2 登录 */
+.layui-form {
+    margin: 0 30px;
+}
+
+.link {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.layui-form-item {
+    position: relative;
+}
+
+.layui-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.layui-input {
+    padding-left: 35px;
+}
+
+/* 3 注册 */
