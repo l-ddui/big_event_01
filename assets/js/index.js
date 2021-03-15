@@ -3,6 +3,22 @@ $(function () {
     // 该功能后面也要用，必须设置为全局
     getUserInfo()
 
+    // 退出
+    $('#btnLogout').on('click', function () {
+        //弹窗
+        layer.confirm('确认退出？', { icon: 3, title: '提示' }, function (index) {
+            // 销毁 token
+            localStorage.removeItem('token')
+            // 跳转路径
+            location.href = '/login.html'
+            // 关闭弹窗
+            layer.close(index);
+        });
+
+
+
+    })
+
     // 入口函数结束
 })
 
@@ -13,9 +29,10 @@ function getUserInfo() {
     $.ajax({
         type: 'get',
         url: '/my/userinfo',
-        headers: {
-            Authorization: localStorage.getItem('token') || ''
-        },
+        // 封装到 $.ajaxPrefilter 中
+        // headers: {
+        //     Authorization: localStorage.getItem('token') || ''
+        // },
         success: (res) => {
             if (res.status !== 0) {
                 return layui.layer.msg(res.message)
